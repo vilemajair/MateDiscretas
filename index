@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDIM - Presentacion Oficial</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background-color: #0b0e14; color: #ffffff;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow: hidden; display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
+        }
+        /* Contenedor principal a PANTALLA COMPLETA */
+        .slide-container {
+            width: 100vw; height: 100vh; position: relative;
+            background: #0b0e14; 
+            display: flex; flex-direction: column;
+            padding: 30px 60px; box-sizing: border-box; 
+        }
+        .slide {
+            display: none; height: 100%; width: 100%;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .slide.active { display: flex; flex-direction: column; justify-content: center;}
+        
+        h1 { color: #00ffff; font-size: 2.8em; margin-bottom: 5px; border-bottom: 2px solid #325078; padding-bottom: 5px; margin-top: 0;}
+        h2 { color: #ffaa00; font-size: 1.6em; margin-top: 0; }
+        ul { font-size: 1.4em; line-height: 1.4; color: #d0d0d0; }
+        li { margin-bottom: 10px; }
+        .highlight { color: #25d366; font-weight: bold; }
+        
+        .footer { position: absolute; bottom: 15px; right: 30px; color: #555; font-size: 1.2em; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Animacion laser para el prototipo */
+        @keyframes scan {
+            0% { top: -10%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Estilo compacto para las matrices de 9x9 con nombres completos */
+        .matriz-table {
+            border-collapse: collapse; text-align: center; font-size: 0.65em; color: #fff; 
+            background: rgba(255,255,255,0.01); box-shadow: 0 0 8px rgba(0,0,0,0.5); width: 100%;
+        }
+        .matriz-table td { padding: 2px 1px; border: 1px solid #325078; }
+        .matriz-title { text-align: center; font-weight: bold; margin: 0 0 3px 0; font-size: 1em;}
+        .nodo-name { color: #ffaa00; font-weight: bold; text-align: left; padding-left: 3px !important;}
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <div class="slide active" id="slide1">
+            <h1 style="text-align: center; border: none; font-size: 4.5em; margin-bottom: 10px;">SIDIM</h1>
+            <h2 style="text-align: center; color: #ffffff; font-size: 2.2em;">Simulador de Difusion de Informacion Multicapa</h2>
+            <p style="text-align: center; font-size: 1.6em; color: #00ffff;">Analisis de propagacion de datos en el 2do semestre de Ing. en Sistemas</p>
+            <p style="text-align: center; font-size: 1.3em; color: #888; margin-top: 50px;">Realizado por el grupo 9</p>
+        </div>
+
+        <div class="slide" id="slide2">
+            <h1>El Problema y la Solucion</h1>
+            <h2>Grafos Multicapa</h2>
+            <ul>
+                <li><span class="highlight">Problema:</span> Perdida de informacion oficial en los canales institucionales.</li>
+                <li><span class="highlight">Solucion:</span> Modelado de una red compleja estructurada en 4 capas concurrentes.</li>
+                <li>Redes utilizadas para el mapeo y trazado estrategico de aristas:
+                    <br><br> <span style="color: #25d366;">WhatsApp</span> | <span style="color: #e1306c;">Instagram</span> | <span style="color: #00ffff;">TikTok</span> | <span style="color: #6264a7;">Teams</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide3">
+            <h1 style="margin-bottom: 5px; font-size: 2.2em;">La Ingenieria de Datos</h1>
+            <h2 style="margin-bottom: 5px; font-size: 1.2em;">Auditoria del Subgrafo Lider: Extraccion de las 4 Matrices de los Nodos Criticos</h2>
+            
+            <div style="display: flex; justify-content: space-between; gap: 15px; margin-bottom: 5px;">
+                <img src="form1.png" style="width: 48%; max-height: 90px; object-fit: contain; border-radius: 10px; border: 1px solid #444;">
+                <img src="form2.png" style="width: 48%; max-height: 90px; object-fit: contain; border-radius: 10px; border: 1px solid #444;">
+            </div>
+            
+            <div style="text-align: center; margin-bottom: 8px;">
+                <a href="https://forms.gle/Ah9McsMD7uejHzTQA" target="_blank" style="color: #00ffff; font-size: 0.9em; text-decoration: none; font-weight: bold; border: 1px solid #00ffff; padding: 3px 15px; border-radius: 5px; background: rgba(0, 255, 255, 0.05); display: inline-block; transition: background 0.3s;">
+                    Abrir Encuesta Real
+                </a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 5px;">
+                
+                <div>
+                    <p class="matriz-title" style="color: #25d366;">Capa WhatsApp (Alta Densidad)</p>
+                    <table class="matriz-table" style="border: 1px solid #25d366;">
+                        <tr style="background: rgba(37,211,102,0.15); font-weight: bold; color: #25d366;">
+                            <td>Nodos</td><td>Joel</td><td>Andrea</td><td>Juan</td><td>Britany</td><td>Sebas</td><td>Maria</td><td>Anibal</td><td>Adrian</td><td>Noemi</td>
+                        </tr>
+                        <tr><td class="nodo-name">Joel</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td></tr>
+                        <tr><td class="nodo-name">Andrea</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Juan</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Britany</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Sebas</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Maria</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td></tr>
+                        <tr><td class="nodo-name">Anibal</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td></tr>
+                        <tr><td class="nodo-name">Adrian</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Noemi</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #25d366;">1</td> <td style="color: #25d366;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <p class="matriz-title" style="color: #e1306c;">Capa Instagram (Moderada)</p>
+                    <table class="matriz-table" style="border: 1px solid #e1306c;">
+                        <tr style="background: rgba(225,48,108,0.15); font-weight: bold; color: #e1306c;">
+                            <td>Nodos</td><td>Joel</td><td>Andrea</td><td>Juan</td><td>Britany</td><td>Sebas</td><td>Maria</td><td>Anibal</td><td>Adrian</td><td>Noemi</td>
+                        </tr>
+                        <tr><td class="nodo-name">Joel</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Andrea</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Juan</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Britany</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Sebas</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td></tr>
+                        <tr><td class="nodo-name">Maria</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Anibal</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td></tr>
+                        <tr><td class="nodo-name">Adrian</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Noemi</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #e1306c;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <p class="matriz-title" style="color: #00ffff;">Capa TikTok (Viral / Dispersa)</p>
+                    <table class="matriz-table" style="border: 1px solid #00ffff;">
+                        <tr style="background: rgba(0,255,255,0.15); font-weight: bold; color: #00ffff;">
+                            <td>Nodos</td><td>Joel</td><td>Andrea</td><td>Juan</td><td>Britany</td><td>Sebas</td><td>Maria</td><td>Anibal</td><td>Adrian</td><td>Noemi</td>
+                        </tr>
+                        <tr><td class="nodo-name">Joel</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #00ffff;">1</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Andrea</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Juan</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Britany</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td></tr>
+                        <tr><td class="nodo-name">Sebas</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Maria</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td></tr>
+                        <tr><td class="nodo-name">Anibal</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Adrian</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Noemi</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #00ffff;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <p class="matriz-title" style="color: #6264a7;">Capa Teams (Cuello de Botella)</p>
+                    <table class="matriz-table" style="border: 1px solid #6264a7;">
+                        <tr style="background: rgba(98,100,167,0.15); font-weight: bold; color: #6264a7;">
+                            <td>Nodos</td><td>Joel</td><td>Andrea</td><td>Juan</td><td>Britany</td><td>Sebas</td><td>Maria</td><td>Anibal</td><td>Adrian</td><td>Noemi</td>
+                        </tr>
+                        <tr><td class="nodo-name">Joel</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Andrea</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Juan</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Britany</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Sebas</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Maria</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Anibal</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Adrian</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #6264a7;">1</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                        <tr><td class="nodo-name">Noemi</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td> <td style="color: #555;">0</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <ul style="font-size: 1.1em; line-height: 1.4; margin: 0; display: flex; justify-content: space-around;">
+                <li>Levantamiento empirico de la red estructural social.</li>
+                <li>Muestra estadistica: Respuestas exactas del Forms recopilado.</li>
+                <li><span class="highlight">Objetivo:</span> Construir las 4 matrices funcionales para el algoritmo.</li>
+            </ul>
+        </div>
+      
+        <div class="slide" id="slide4">
+            <h1>Nodos Criticos</h1>
+            <h2>El Subgrafo Lider</h2>
+            <ul>
+                <li>Identificamos a 9 nodos puente con la mayor cantidad de conexiones inter-aplicacion:</li>
+                <li style="color: #ffaa00; font-size: 1.8em; list-style-type: none; text-align: center; margin: 20px 0; font-weight: bold;">
+                    Joel, Andrea, Juan, Britany, Sebas, Maria, Anibal, Adrian, Noemi.
+                </li>
+                <li>Desarrollo e implementacion de un 'Modo de Aislamiento' para auditoria estricta del nucleo de la red.</li>
+            </ul>
+        </div>
+
+        <div class="slide" id="slide5">
+            <h1>El Algoritmo</h1>
+            <h2>Fatiga de Informacion</h2>
+            <ul>
+                <li>Evitamos el alcance irreal e hipotetico del 100% de la poblacion estudiantil.</li>
+                <li>Implementacion logica de un modelo con <span class="highlight">Decaimiento Exponencial</span> (Es decir, al principio disminuye rápido y luego cada vez más lentamente).</li>
+              
+            </ul>
+        </div>
+
+        <div class="slide" id="slide6">
+            <h1 style="text-align: center; border: none; font-size: 3.5em; margin-top: 1%; color: #ffaa00;">PROTOTIPO</h1>
+            <h2 style="text-align: center; color: #ffffff;">Prototipo de Grafo</h2>
+            
+            <div style="position: relative; width: 42%; margin: 10px auto 0 auto; border: 2px solid #00ffff; border-radius: 10px; overflow: hidden; box-shadow: 0 0 25px rgba(0,255,255,0.2); background: #000;">
+                <img src="prototipo.png" style="width: 100%; display: block; opacity: 0.85;">
+                <div style="position: absolute; left: 0; width: 100%; height: 4px; background: #00ffff; box-shadow: 0 0 15px 4px rgba(0,255,255,0.6); animation: scan 3s infinite linear;"></div>
+            </div>
+
+          
+        </div>
+
+        
+        <div class="footer" id="page-counter">1 / 7</div>
+    </div>
+    
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 6;
+
+        function showSlide(n) {
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById('slide' + i).classList.remove('active');
+            }
+            document.getElementById('slide' + n).classList.add('active');
+            document.getElementById('page-counter').innerText = n + ' / ' + totalSlides;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                if (currentSlide < totalSlides) { currentSlide++; showSlide(currentSlide); }
+            } else if (event.key === 'ArrowLeft') {
+                if (currentSlide > 1) { currentSlide--; showSlide(currentSlide); }
+            }
+        });
+    </script>
+</body>
+</html>
